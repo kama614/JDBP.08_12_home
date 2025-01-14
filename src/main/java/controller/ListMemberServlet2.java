@@ -37,11 +37,11 @@ public class ListMemberServlet2 extends HttpServlet {
 
 			String sql = "SELECT"
 					+ " members.id,members.name,members.age,"
-					+ " members.address,members.created,"
+					+ " members.address,members.created,members.type_id,"
 					+ " member_types.name AS type_name"
 					+ " FROM members"
 					+ " JOIN member_types"
-					+ " ON members.type_id=member_types.id";
+					+ " ON members.type_id = member_types.id";
 
 			PreparedStatement stmt = con.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
